@@ -1,0 +1,72 @@
+//
+
+public class Vector3D {
+	
+	private double x;
+	private double y;
+	private double z;
+	
+	
+	public Vector3D(double x, double y, double z){
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	
+	public double getR(){
+	//return radical distance r
+		double r = Math.sqrt(x*x + y*y + z*z);
+		return r;
+		
+	}
+	
+	public double getTheta(){
+		//return the inclination theta with respect to the zith
+		double theta = Math.acos(z/(getR()));
+		return theta;
+	
+	}
+	
+	public double getPhi(){
+		//return the azimut angle
+		double phi = Math.atan(y/x);
+		return phi;
+
+	}
+	
+	public double getx(){
+		return x;
+	}
+	
+	public double getY(){
+		return y;
+	}
+	
+	public double getZ(){
+		return z;
+	}
+	
+	public static Vector3D add(Vector3D lhs, Vector3D rhs){
+		//static hence a CLASS method - i.e. is the same
+		//return sum of two 3d vercotrs
+		double xvalue = lhs.getx() + rhs.getx();
+		double yvalue = lhs.getY() + rhs.getY();
+		double zvalue = lhs.getZ() + rhs.getZ();
+		Vector3D sumVector = new Vector3D( xvalue, yvalue, zvalue);
+		return sumVector;
+	}
+	
+	public static Vector3D subtract(Vector 3D lhs, Vector3D rhs){
+		//return difference of two 3d vectors
+		
+	}
+	
+	public static Vector3D scale(Vector3D v, double scaleFactor){
+		//return the result of scaling v by scalefactor
+		
+	}
+	
+	
+	
+
+}
